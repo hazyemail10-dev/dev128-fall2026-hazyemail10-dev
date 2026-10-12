@@ -1,5 +1,5 @@
 # Starting file for Lab 1 - Chapter 12 - book_catalog.py program
-# Include your name, date, and class in the assignment comments (replace this line)
+# Irwin Li, 10/11/2026, DEV128, Lab 1
 
 def show_book(book_catalog):
     title = input("Title: ")
@@ -10,6 +10,13 @@ def show_book(book_catalog):
         print(f"Pub year: {book['pubyear']}")
     else:
         print(f"Sorry, {title} doesn't exist in the catalog.")
+
+def list_books(book_catalog):
+    for title, book in book_catalog.items():
+        print(f"Title:    {title}")
+        print(f"Author:   {book['author']}")
+        print(f"Pub year: {book['pubyear']}")
+        print()
 
 def add_edit_book(book_catalog, mode):
     title = input("Title: ")
@@ -45,6 +52,7 @@ def display_menu():
     print()
     print("COMMAND MENU")
     print("show - Show book info")
+    print("list - List all books")
     print("add -  Add book")
     print("edit - Edit book")
     print("del -  Delete book")
@@ -68,6 +76,8 @@ def main():
         command = input("Command: ").lower()
         if command == "show":
             show_book(book_catalog)
+        elif command == "list":
+            list_books(book_catalog)
         elif command == "add":
             add_edit_book(book_catalog, mode="add")
         elif command == "edit":
