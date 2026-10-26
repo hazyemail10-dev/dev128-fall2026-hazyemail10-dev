@@ -1,5 +1,5 @@
 # Starting file for Lab 3 - objects.py
-# Include your name, class, and date in the assignment comment header
+# Irwin Li, DEV128, 10/25/2026
 
 from dataclasses import dataclass
 
@@ -17,17 +17,32 @@ class Product:
 
     def getDescription(self):
         return self.name
+@dataclass
+class Media(Product):
+    format:str = ""
 
 @dataclass
-class Book(Product):
+class Book(Media):
     author:str = ""
+    format:str = ""
 
     def getDescription(self):
         return f"{Product.getDescription(self)} by {self.author}"
-
+    
 @dataclass        
-class Movie(Product):
+class Movie(Media):
     year:int = 0
+    format:str = ""
 
     def getDescription(self):
         return f"{Product.getDescription(self)} ({self.year})"
+
+@dataclass
+class Album(Media):
+    artist:str = ""
+    format:str = ""
+
+    def getDescription(self):
+        return f"{Product.getDescription(self)} by {self.artist}"
+    
+    
