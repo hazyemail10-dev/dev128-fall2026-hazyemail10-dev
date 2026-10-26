@@ -24,7 +24,6 @@ class Media(Product):
 @dataclass
 class Book(Media):
     author:str = ""
-    format:str = ""
 
     def getDescription(self):
         return f"{Product.getDescription(self)} by {self.author}"
@@ -32,7 +31,6 @@ class Book(Media):
 @dataclass        
 class Movie(Media):
     year:int = 0
-    format:str = ""
 
     def getDescription(self):
         return f"{Product.getDescription(self)} ({self.year})"
@@ -40,7 +38,6 @@ class Movie(Media):
 @dataclass
 class Album(Media):
     artist:str = ""
-    format:str = ""
 
     def getDescription(self):
         return f"{Product.getDescription(self)} by {self.artist}"
