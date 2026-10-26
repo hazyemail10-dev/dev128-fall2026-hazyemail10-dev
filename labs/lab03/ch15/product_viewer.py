@@ -15,13 +15,10 @@ def show_product(product):
     print(f"{'Name:':{w}}{product.name}")
     if isinstance(product, Book):
         print(f"{'Author:':{w}}{product.author}")
-        print(f"{'Format:':{w}}{product.format}")
     if isinstance(product, Movie):
         print(f"{'Year:':{w}}{product.year}")
-        print(f"{'Format:':{w}}{product.format}")
     if isinstance(product, Album):
         print(f"{'Artist:':{w}}{product.artist}")
-        print(f"{'Format:':{w}}{product.format}")
     if isinstance(product, Media):
         print(f"{'Format:':{w}}{product.format}")
     print(f"{'Discount price:':{w}}{product.getDiscountPrice():.2f}")
