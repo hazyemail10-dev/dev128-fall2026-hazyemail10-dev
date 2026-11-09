@@ -1,11 +1,7 @@
 # Starting file for Project 1
 # Irwin Li, 11/8/2026, DEV128
 
-# AI assistance: ChatGPT was used for guidance, code examples,
-# and explanations while developing this project.
-
 import sqlite3
-
 
 # Connect to the persistent personnel database
 registry_connection = sqlite3.connect("users.db")
